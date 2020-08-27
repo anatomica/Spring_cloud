@@ -1,0 +1,38 @@
+server:
+  port: 7777
+
+spring:
+  application:
+    name: products
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=products
+    username: postgres
+    password: 190283
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  thymeleaf:
+    encoding: UTF-8
+#    prefix: file:src/main/resources/templates/
+    cache: false
+  resources:
+    static-locations: file:src/main/resources/static/
+  jackson:
+    serialization:
+      indent_output: true
+
+eureka:
+  client:
+    instance:
+      preferIpAddress: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
