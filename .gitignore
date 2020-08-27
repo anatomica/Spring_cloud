@@ -1,0 +1,6 @@
+/.idea/
+/Spring_cloud.iml
+/eureka-service/target/classes/
+/product_service/target/classes/
+/thymeleaf_viewer/target/classes/
+/zuul-server/target/classes/
